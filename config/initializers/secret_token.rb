@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-BeardedRobot::Application.config.secret_key_base = 'c2188772f3a49bd570fdf545e88ed5495b9ef3cbc957887c3ca46c626e37449dcaad2ed87233e5b54741b20e86412db4328c8035e03c3a49a182a98ebcb1e7ef'
+BeardedRobot::Application.config.secret_key_base = ENV['SECRET_KEY_BASE'] || ( 'x' * 30)
