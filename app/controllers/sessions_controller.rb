@@ -1,8 +1,10 @@
 class SessionsController < ApplicationController
   def new
+    authorize! { current_user.nil? }
   end
   
   def create
+    authorize! { current_user.nil? }
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
